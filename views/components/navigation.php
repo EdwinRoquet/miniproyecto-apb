@@ -1,3 +1,4 @@
+
 <div class="barra">
         <a href="#nav" class="mobile-menu">
             <i class="fas fa-ellipsis-v"></i>
@@ -8,25 +9,19 @@
             <a href="#">Nosotros</a>
             <a href="#">Servicio</a>
             <a href="#">Contacto</a>
-            <a href="registro">Registro</a>
+            <a href="<?php echo $url ?>registro">Registro</a>
             <?php
                  
-                    if (isset($_SESSION['validarIngreso']) == "ok") {    
-                        echo '<a href="reporte">Reporte</a>';
-                        echo '<a href="logout">Cerrar Sessión</a>';
-                     }
-                 
-                
-                 if (isset($_SESSION['rol'])) {
-                    if ($_SESSION['rol'] == "administrador" ) {
-                        echo '<a href="administracion">administracion</a>';
-                        echo '<a href="logout">Cerrar Sessión</a>';
-                      }
-                  
-                 }
-                 
+             if (isset($_SESSION['validarIngreso']) == "ok") {    ?>
+                   
             
-            ?>
+                   <a href="<?php echo $url ?>administracion/">administracion</a>
+                 <a href="<?php echo $url ?>logout/">Cerrar Sessión</a>
+
+
+             <?php   }?>
+                 
+        
 
             <a href="#" class="cerrar">
                     <i class="fas fa-times"></i>

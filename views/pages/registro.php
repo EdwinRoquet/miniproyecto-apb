@@ -19,7 +19,8 @@
          <input type="password" name="contrasena" class="input-form">
        </div>
        <div class="form text-center">
-           <button class="boton ">Enviar</button>
+         <input type="hidden" name="login" value="login">
+           <button type="submit" class="boton ">Enviar</button>
        </div>
        <?php
        //Forma en que se instancia la clase de un método estático
@@ -52,6 +53,7 @@
          <input type="password" class="input-form">
        </div>
        <div class="form text-center">
+       <input type="hidden" name="registro" value="registro">
        <button type="submit" class="boton  ">Enviar</button>
        </div>
        <?php

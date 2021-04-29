@@ -19,7 +19,7 @@ class ReporteControlador {
             "tipo_servicio" => $_POST["tipo_servicio"],
             "fecha" => $_POST["fecha"],
             "usuario_id" => $_POST["usuario_id"],
-            "codigo" => $_POST["usuario_id"],
+            "codigo" => $_POST["codigo"],
         );
 
         $resultado = Reporte::mdlRegistro($table, $data);
@@ -48,12 +48,13 @@ static public function ctrActualizarRegistro(){
       $table = "reportes";
 
    $data = array(
+    "id" => $_POST["idReporte"],
     "asunto" => $_POST["asunto"],
     "descripcion" => $_POST["descripcion"],
     "tipo_servicio" => $_POST["tipo_servicio"],
     "fecha" => $_POST["fecha"],
     "usuario_id" => $_POST["usuario_id"],
-    "codigo" => $_POST["usuario_id"],
+    "codigo" => $_POST["codigo"],
    );
    
    $resultado = Reporte::mdlEditarRegistro($table, $data);
@@ -70,18 +71,19 @@ static public function ctrActualizarRegistro(){
 
 public function ctrEliminarRegistro(){
   
-  if(isset($_POST["id_reportes"])){
+  if(isset($_POST["id_Reporte"])){
 
     $table = "reportes";
 
-    $value =  $_POST["id_reportes"];
+    $value =  $_POST["id_Reporte"];
 
     $resultado = Reporte::mdlEliminarRegistro($table, $value);
 
     if ($resultado == "ok") {
 
       echo "<script> 
-              aler('Se elimino correctamente');
+              alert('Se elimino correctamente');
+              window.location = 'http://localhost/servicio/reporte';
             </script>";
 
     }

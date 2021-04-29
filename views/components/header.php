@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+$url = 'http://localhost/servicio/';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>APB</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="views/css/normalizacion.css">
-    <link rel="stylesheet" href="views/css/estilos.css">
+    <link rel="stylesheet" href="<?php echo $url ?>views/css/normalizacion.css">
+    <link rel="stylesheet" href="<?php echo $url ?>views/css/estilos.css">
 </head>
 <body>

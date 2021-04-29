@@ -6,7 +6,7 @@ class UsuarioControlador {
   //Metedo para registrar usuarios
  static  public function ctrRegistro(){
 
-    if(isset($_POST["nombre"])){
+    if(isset($_POST["registro"])){
 
         $table = "usuarios";
 
@@ -45,7 +45,7 @@ static public function ctrMostarRegistro( $item, $value){
 }
 
 public function ctrLogin(){
-    if (isset($_POST['correo'])) {
+    if (isset($_POST['login'])) {
         
         $table = "usuarios";
         $item  = "correo";
@@ -57,6 +57,7 @@ public function ctrLogin(){
      if ($resultado['correo'] == $_POST['correo'] && password_verify($_POST['contrasena'], $resultado['contrasena']) ) {
         
        $_SESSION['validarIngreso'] = 'ok';
+       $_SESSION['id'] = $resultado['id'];
        $_SESSION['nombre'] = $resultado['nombre'];
        $_SESSION['correo'] = $resultado['correo'];
        $_SESSION['fecha'] = $resultado['fecha'];
@@ -66,7 +67,7 @@ public function ctrLogin(){
 
         echo "<script> 
                 alert('Login Exitoso');
-                window.location = 'administracion';
+                window.location = 'http://localhost/servicio/administracion';
              </script>";
          
      } else {
@@ -101,7 +102,7 @@ public function ctrEliminarRegistro(){
       if(alert){
         setTimeout(() => {
           alert.remove();
-          window.location = 'index.php?page=usuario';
+          window.location = 'http://localhost/servicio/administracion';
         }, 1000);
       }
       </script>";

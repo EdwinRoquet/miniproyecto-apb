@@ -8,18 +8,26 @@
 <div class=" contenido">
 
 <?php
+
       
       if(isset($_GET["page"])){
-         if($_GET["page"] == "registro" || 
-            $_GET["page"] == "reporte-crear" || 
-            $_GET["page"] == "reporte-editar" || 
-            $_GET["page"] == "reporte" || 
-            $_GET["page"] == "administracion" || 
-            $_GET["page"] == "usuario" || 
-            $_GET["page"] == "inicio" ||  
-            $_GET["page"] == "logout"){
+        $rutas = explode("/", $_GET["page"]);
 
-             include "pages/". $_GET["page"].".php";
+          $ruta =  $rutas[0];
+
+
+
+         if($ruta == "registro" || 
+            $ruta == "crear-reporte" || 
+            $ruta == "editar-reporte" || 
+            $ruta == "reporte" || 
+            $ruta == "atencion" || 
+            $ruta == "administracion" || 
+            $ruta == "usuario" || 
+            $ruta == "inicio" ||  
+            $ruta == "logout"){
+
+             include "pages/". $ruta.".php";
             }else{
                 include "pages/404.php";
             }

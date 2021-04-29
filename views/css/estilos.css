@@ -419,3 +419,11 @@ label {
   .rojo{
       background-color: red;
   }
+  .centrar{
+      display: flex;
+      justify-content: center;
+  }
+
+  .form-registro{
+      width: 300px;
+  }

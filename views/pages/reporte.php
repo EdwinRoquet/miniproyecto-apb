@@ -1,44 +1,78 @@
+<?php
+
+if (!isset($_SESSION['validarIngreso'])) {
+    echo "<script> window.location = 'registro';</script>";
+    return;
+}else{
+    if ($_SESSION['rol'] != "administrador"){
+        echo "<script> window.location = 'administracion';</script>";
+        return;
+    }
+}
+
+
+
+?>
+
+
+
+
 <div class="contenedor">
     <h3 class="text-center">Panel de Reporte</h3>
 
 
-    <a href="crear-reporte" class="boton">Crear Reporte</a>
-<div class="contenedor">
+    <a href="<?php echo $url ?>crear-reporte/" class="boton">Crear Reporte</a>
+<div class="contenedor  centrar">
 
 <table >
 <caption>Tabla de reporte.</caption>
 <tr> 
+    <th>Numero</th>
     <th>Asunto</th>
      <th>Descripción</th> 
      <th>Tipo de servicio</th>
      <th>Fecha</th> 
+     <th>Codigo </th>
      <th>Usuario </th>
      <th>Acciones </th>
 </tr>
+<tbody>
+<?php  
+         
+        $reportes = ReporteControlador::ctrMostarRegistroInfo(null, null);
+    //   echo "<pre>";
+    //     var_dump( $reportes);
+    //     echo "</pre>";
+        foreach($reportes as $key => $reporte){
+
+                   
+?>
+
+
 <tr> 
-    <td>Arándano</td> 
-    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td> 
-    <td>Arándano</td> 
-    <td>Arándano</td> 
-    <td>Arándano</td> 
+    <td># <?php echo $key + 1;  ?></td> 
+    <td><?php echo  $reporte['asunto'];  ?></td> 
+    <td><?php echo  $reporte['descripcion'];  ?></td> 
+    <td><?php echo  $reporte['tipo_servicio'];  ?></td> 
+    <td><?php echo  $reporte['fecha'];  ?></td> 
+    <td><?php echo  $reporte['codigo'];  ?></td> 
+    <td><?php echo  $reporte['usuario_id'];  ?></td> 
     <td>
-        <a href="editar-reporte" class="btn naranja">Editar</a>
-        <a href="#" class="btn rojo">Eliminar</a>
+        <a href="<?php echo $url ?>editar-reporte/<?php echo $reporte['id']; ?>" class="btn naranja">Editar</a>
+        <form method="POST">
+        <input type="hidden" name="id_Reporte" value="<?php echo  $reporte['id']; ?>">
+           <button type="submit"  class="btn rojo">Eliminar</button>
+           <?php
+               $eliminarReporte = new ReporteControlador();
+               $eliminarReporte->ctrEliminarRegistro();        
+           ?>
+        </form>
     </td> 
 
 </tr>
-<tr> 
-    <td>Arándano</td> 
-    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td> 
-    <td>Arándano</td> 
-    <td>Arándano</td> 
-    <td>Arándano</td> 
-    <td>
-        <a href="editar-reporte" class="btn naranja">Editar</a>
-        <a href="#" class="btn rojo">Eliminar</a>
-    </td> 
+<?php }?>
+</tbody>
 
-</tr>
 
 </table>
 
