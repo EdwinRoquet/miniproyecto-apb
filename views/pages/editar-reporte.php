@@ -66,9 +66,9 @@ $id =  $rutas[1];
     <button type="submit" class="boton  ">Enviar</button>
     </div>
     <?php
-     $reporte = ReporteControlador::ctrActualizarRegistro();
+     $reporteActualizar = ReporteControlador::ctrActualizarRegistro();
 
-     if ($reporte == "ok") {
+     if ($reporteActualizar == "ok") {
 
       echo "<script> 
              alert('Se actualizo Correctamente');

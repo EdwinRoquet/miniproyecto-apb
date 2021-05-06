@@ -428,3 +428,14 @@ label {
   .form-registro{
       width: 300px;
   }
+  .enlace{
+      text-decoration: none;
+
+}
+.cajaenlace{
+    width: 100%;
+    text-align: center!important;
+}
+.azul{
+background-color: #039;
+}

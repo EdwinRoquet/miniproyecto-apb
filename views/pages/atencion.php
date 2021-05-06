@@ -60,6 +60,7 @@ estado -->
     <td><?php echo  $atencion['fecha'];  ?></td> 
     <td><?php echo  $atencion['descripcion'];  ?></td> 
     <td><?php echo  $atencion['estado'];  ?></td>  
+  
     <td>
         <a href="<?php echo URL_BASE ?>editar-atencion/<?php echo $atencion['id']; ?>" class="btn naranja">Editar</a>
         <form method="POST">

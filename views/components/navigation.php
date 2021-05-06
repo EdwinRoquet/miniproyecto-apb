@@ -9,7 +9,7 @@
             <a href="<?php echo URL_BASE ?>">Nosotros</a>
             <a href="<?php echo URL_BASE ?>">Servicio</a>
             <a href="<?php echo URL_BASE ?>">Contacto</a>
-            <a href="<?php echo URL_BASE ?>registro/">Registro</a>
+            <a href="<?php echo URL_BASE ?>login/">Soporte Tecnico</a>
             <?php
                  
              if (isset($_SESSION['validarIngreso']) == "ok") {    ?>

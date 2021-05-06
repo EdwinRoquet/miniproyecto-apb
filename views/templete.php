@@ -22,6 +22,7 @@
             $ruta == "editar-reporte" || 
             $ruta == "reporte" || 
             $ruta == "crear-atencion" || 
+            $ruta == "agregar-atencion" || 
             $ruta == "editar-atencion" || 
             $ruta == "atencion" || 
             $ruta == "crear-categoria" || 
@@ -36,6 +37,7 @@
             $ruta == "administracion" || 
             $ruta == "usuario" || 
             $ruta == "inicio" ||  
+            $ruta == "login" ||  
             $ruta == "logout"){
 
              include "pages/". $ruta.".php";

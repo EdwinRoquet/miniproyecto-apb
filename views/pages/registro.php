@@ -1,41 +1,14 @@
 
  <h3 class="text-center">Bienvenido al Sistema Servicios Tecnicos</h3>
 
-<div class="contenedor flex-container">
 
 
-   <div class="cuadro">
 
-   <h4 class="text-center">Iniciar Sessión</h4>
-
-       <form  method="POST">
-     
-       <div class="form">
-         <label for="">Correo:</label>
-         <input type="text" name="correo" class="input-form">
-       </div>
-       <div class="form">
-         <label for="">Contraseña:</label>
-         <input type="password" name="contrasena" class="input-form">
-       </div>
-       <div class="form text-center">
-         <input type="hidden" name="login" value="login">
-           <button type="submit" class="boton ">Enviar</button>
-       </div>
-       <?php
-       //Forma en que se instancia la clase de un método estático
-          $login = new UsuarioControlador();
-          $login->ctrLogin()
-        ?>
-     </form>
+  
    
-   </div>
-   
-   <div class="cuadro">
-
    <h4 class="text-center">Registrate en el Sistema</h4>
-
-     <form method="POST">
+   <div class="centrar">
+     <form method="POST" class="cuadro">
        <div class="form">
          <label for="">Nombre:</label>
          <input type="text" name="nombre" class="input-form">
@@ -66,6 +39,7 @@
       echo "<script> 
              alert('Registro Exitosos');
          </script>";
+         echo "<script> window.location = '".URL_BASE."login/';</script>";
     }
        
    ?>
@@ -74,8 +48,13 @@
      </form>
        
    
-   </div>
+ 
 
 
+
+</div>
+
+<div class="cajanenlace text-center">
+  <a href="<?php echo URL_BASE ?>login/" class="enlace ">Si ya te registraste</a>
 
 </div>

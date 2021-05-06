@@ -34,6 +34,7 @@ if (!isset($_SESSION['validarIngreso'])) {
      <th>Fecha</th> 
      <th>Codigo </th>
      <th>Usuario </th>
+     <th>Reporte </th>
      <th>Acciones </th>
 </tr>
 <tbody>
@@ -57,6 +58,9 @@ if (!isset($_SESSION['validarIngreso'])) {
     <td><?php echo  $reporte['fecha'];  ?></td> 
     <td><?php echo  $reporte['codigo'];  ?></td> 
     <td><?php echo  $reporte['usuario_id'];  ?></td> 
+    <td>
+    <a href="<?php echo URL_BASE ?>agregar-atencion/<?php echo $reporte['id']; ?>" class="btn azul">atender</a>
+    </td>  
     <td>
         <a href="<?php echo URL_BASE ?>editar-reporte/<?php echo $reporte['id']; ?>" class="btn naranja">Editar</a>
         <form method="POST">

@@ -27,8 +27,8 @@ estado -->
     <button type="submit" class="boton  ">Enviar</button>
     </div>
     <?php
-       $reporte = CategoriaControlador::ctrRegistroInfo();
-       if ($reporte == "ok") {
+       $categoria = CategoriaControlador::ctrRegistroInfo();
+       if ($categoria == "ok") {
 
         echo "<script> 
                alert('Registro Exitosos');
