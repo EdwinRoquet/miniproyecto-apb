@@ -67,8 +67,8 @@ public function ctrLogin(){
 
         echo "<script> 
                 alert('Login Exitoso');
-                window.location = 'http://localhost/servicio/administracion';
              </script>";
+        echo "<script> window.location = '".URL_BASE."administracion';</script>";
          
      } else {
       echo "<script> 
@@ -94,19 +94,7 @@ public function ctrEliminarRegistro(){
     $result = Usuario::mdlEliminarRegistro($table, $value);
 
     if ($result == "ok") {
-      echo ' <div class="alert alert-success">Se ha eliminado correctamnete </div>';
-
-      echo "<script> 
-      const alert =  document.querySelector('.alert');
-
-      if(alert){
-        setTimeout(() => {
-          alert.remove();
-          window.location = 'http://localhost/servicio/administracion';
-        }, 1000);
-      }
-      </script>";
-
+      echo "<script> window.location = '".URL_BASE."administracion';</script>";
     }
 
   }

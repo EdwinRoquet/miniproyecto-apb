@@ -1,6 +1,6 @@
 <?php
 
-class AtencionControlador {
+class ContactoControlador {
 
 
  static public function ctrRegistroInfo(){
@@ -10,14 +10,14 @@ class AtencionControlador {
     if(isset($_POST["asunto"])){
      
 
-        $table = "atenciones";
-        
+        $table = "contactos";
+        // asunto
+        // correo
+        // descripcion
         $data = array(
             'asunto'      => $_POST['asunto'],
-            'codigo'      => $_POST['codigo'],
-            'fecha'       => $_POST['fecha'],
+            'correo'      => $_POST['correo'],
             'descripcion' => $_POST['descripcion'],
-            'estado'      => $_POST['estado'],
         );
 
         $resultado = Atencion::mdlRegistro($table, $data);
@@ -32,7 +32,7 @@ class AtencionControlador {
 
 static public function ctrMostarRegistroInfo( $item, $value){
 
-    $table = "atenciones";
+    $table = "contactos";
     $result = Atencion::mdlMostrarRegistroInfo($table, $item, $value);
     return $result;
     
@@ -43,15 +43,13 @@ static public function ctrActualizarRegistro(){
 
     if (isset($_POST["asunto"])) {
        
-      $table = "atenciones";
+      $table = "contactos";
 
    $data = array(
-    "id" => $_POST["idAtencion"],
+    "id" => $_POST["idContacto"],
     'asunto'      => $_POST['asunto'],
-    'codigo'      => $_POST['codigo'],
-    'fecha'       => $_POST['fecha'],
+    'correo'      => $_POST['correo'],
     'descripcion' => $_POST['descripcion'],
-    'estado'      => $_POST['estado'],
    );
    
    $resultado = Atencion::mdlEditarRegistro($table, $data);
@@ -68,11 +66,11 @@ static public function ctrActualizarRegistro(){
 
 public function ctrEliminarRegistro(){
   
-  if(isset($_POST["id_Atencion"])){
+  if(isset($_POST["id_Contacto"])){
 
-    $table = "atenciones";
+    $table = "contactos";
 
-    $value =  $_POST["id_Atencion"];
+    $value =  $_POST["id_Contacto"];
 
     $resultado = Atencion::mdlEliminarRegistro($table, $value);
 
@@ -81,7 +79,7 @@ public function ctrEliminarRegistro(){
       echo "<script> 
               alert('Se elimino correctamente');
             </script>";
-      echo "<script> window.location = '".URL_BASE."atencion';</script>";
+      echo "<script> window.location = '".URL_BASE."contacto';</script>";
 
     }
 

@@ -21,7 +21,18 @@
             $ruta == "crear-reporte" || 
             $ruta == "editar-reporte" || 
             $ruta == "reporte" || 
+            $ruta == "crear-atencion" || 
+            $ruta == "editar-atencion" || 
             $ruta == "atencion" || 
+            $ruta == "crear-categoria" || 
+            $ruta == "editar-categoria" || 
+            $ruta == "categoria" || 
+            $ruta == "crear-equipo" || 
+            $ruta == "editar-equipo" || 
+            $ruta == "equipo" || 
+            $ruta == "crear-servicio" || 
+            $ruta == "editar-servicio" || 
+            $ruta == "servicio" || 
             $ruta == "administracion" || 
             $ruta == "usuario" || 
             $ruta == "inicio" ||  

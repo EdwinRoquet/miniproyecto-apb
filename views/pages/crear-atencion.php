@@ -10,8 +10,12 @@ if (!isset($_SESSION['validarIngreso'])) {
 
 <div class="form-registro">
 
-<h4 class="text-center">Reporte de Servicio</h4>
-
+<h4 class="text-center">Reporte de Atención</h4>
+<!-- asunto
+codigo
+fecha
+descripcion
+estado -->
   <form method="POST">
     <div class="form">
       <label for="">Asunto:</label>
@@ -22,34 +26,45 @@ if (!isset($_SESSION['validarIngreso'])) {
       <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
     </div>
     <div class="form">
-      <label for="">Tipo de Servicio:</label>
-       <select name="tipo_servicio" id="" class="input-form">
+      <label for="">Reporte:</label>
+       <select name="codigo" id="" class="input-form">
        <option value="">Seleccione una opción</option>
-       <option value="Mantenimiento">Mantenimiento</option>
-       <option value="Reparacion">Reparacion</option>
+       <?php     
+          
+          $reportes = ReporteControlador::ctrMostarRegistroInfo(null, null);
+          //   echo "<pre>";
+          //     var_dump( $reportes);
+          //     echo "</pre>";
+              foreach($reportes as $key => $reporte){
+       
+       ?>
+       <option value="<?php echo $reporte['codigo'] ?>"><?php echo $reporte['asunto'] ?></option>
+   
+
+       <?php }  ?>
        </select>
     </div>
+
     <div class="form">
-      <label for="">Codigo:</label>
-      <?php   $codigo = uniqid();  ?>
-      <input type="text" name="codigo" value="<?php  echo $codigo;?>" class="input-form">
+      <label for="">Estado:</label>
+      <input type="text" class="input-form"  name="estado" value="">
     </div>
+
     <div class="form">
       <label for="">Fecha:</label>
       <input type="date" class="input-form"  name="fecha" value="">
     </div>
     <div class="form text-center">
-    <input type="hidden" name="usuario_id" value="<?php  echo $_SESSION['id'] ;?>">
     <button type="submit" class="boton  ">Enviar</button>
     </div>
     <?php
-       $reporte = ReporteControlador::ctrRegistroInfo();
+       $reporte = AtencionControlador::ctrRegistroInfo();
        if ($reporte == "ok") {
 
         echo "<script> 
                alert('Registro Exitosos');
            </script>";
-        echo "<script> window.location = '".URL_BASE."reporte/';</script>";
+        echo "<script> window.location = '".URL_BASE."atencion/';</script>";
       }
     
     ?>

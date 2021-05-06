@@ -5,19 +5,19 @@
         </a>
 
         <nav id="nav" class="navegacion-principal contenedor">
-            <a href="inicio">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Servicio</a>
-            <a href="#">Contacto</a>
-            <a href="<?php echo $url ?>registro">Registro</a>
+            <a href="<?php echo URL_BASE ?>">Inicio</a>
+            <a href="<?php echo URL_BASE ?>">Nosotros</a>
+            <a href="<?php echo URL_BASE ?>">Servicio</a>
+            <a href="<?php echo URL_BASE ?>">Contacto</a>
+            <a href="<?php echo URL_BASE ?>registro/">Registro</a>
             <?php
                  
              if (isset($_SESSION['validarIngreso']) == "ok") {    ?>
                    
             
-                   <a href="<?php echo $url ?>administracion/">administracion</a>
-                 <a href="<?php echo $url ?>logout/">Cerrar Sessión</a>
-
+                   <a href="<?php echo URL_BASE ?>administracion/">administracion</a>
+                 <a href="<?php echo URL_BASE ?>logout/">Cerrar Sessión</a>
+                 
 
              <?php   }?>
                  

@@ -412,6 +412,7 @@ label {
       text-align: center;
       font-size: 15px;
       font-weight: 600;
+      max-width: 80px;
   }
   .naranja{
       background-color: var(--primario);

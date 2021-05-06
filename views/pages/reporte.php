@@ -1,11 +1,11 @@
 <?php
 
 if (!isset($_SESSION['validarIngreso'])) {
-    echo "<script> window.location = 'registro';</script>";
+    echo "<script> window.location = '".URL_BASE."registro';</script>";
     return;
 }else{
     if ($_SESSION['rol'] != "administrador"){
-        echo "<script> window.location = 'administracion';</script>";
+        echo "<script> window.location = '".URL_BASE."administracion';</script>";
         return;
     }
 }
@@ -21,7 +21,7 @@ if (!isset($_SESSION['validarIngreso'])) {
     <h3 class="text-center">Panel de Reporte</h3>
 
 
-    <a href="<?php echo $url ?>crear-reporte/" class="boton">Crear Reporte</a>
+    <a href="<?php echo URL_BASE ?>crear-reporte/" class="boton">Crear Reporte</a>
 <div class="contenedor  centrar">
 
 <table >
@@ -58,7 +58,7 @@ if (!isset($_SESSION['validarIngreso'])) {
     <td><?php echo  $reporte['codigo'];  ?></td> 
     <td><?php echo  $reporte['usuario_id'];  ?></td> 
     <td>
-        <a href="<?php echo $url ?>editar-reporte/<?php echo $reporte['id']; ?>" class="btn naranja">Editar</a>
+        <a href="<?php echo URL_BASE ?>editar-reporte/<?php echo $reporte['id']; ?>" class="btn naranja">Editar</a>
         <form method="POST">
         <input type="hidden" name="id_Reporte" value="<?php echo  $reporte['id']; ?>">
            <button type="submit"  class="btn rojo">Eliminar</button>

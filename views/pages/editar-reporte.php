@@ -1,10 +1,10 @@
 <?php
 if (!isset($_SESSION['validarIngreso'])) {
-    echo "<script> window.location = 'registro';</script>";
+    echo "<script> window.location = '".URL_BASE."registro/';</script>";
     return;
 }else{
     if ($_SESSION['rol'] != "administrador"){
-        echo "<script> window.location = 'administracion';</script>";
+        echo "<script> window.location = '".URL_BASE."administracion/';</script>";
         return;
     }
 }
@@ -72,8 +72,8 @@ $id =  $rutas[1];
 
       echo "<script> 
              alert('Se actualizo Correctamente');
-             window.location = 'http://localhost/servicio/reporte/';
          </script>";
+      echo "<script> window.location = '".URL_BASE."reporte/';</script>";
     }
 
     

@@ -83,8 +83,8 @@ public function ctrEliminarRegistro(){
 
       echo "<script> 
               alert('Se elimino correctamente');
-              window.location = 'http://localhost/servicio/reporte';
             </script>";
+      echo "<script> window.location = '".URL_BASE."reporte';</script>";
 
     }
 
